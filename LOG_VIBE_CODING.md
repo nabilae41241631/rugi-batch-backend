@@ -39,3 +39,20 @@
 - Hasil Validasi Manusia:
   - Pengujian ulang skenario Normal menghasilkan status Normal dengan `tahap_paling_bocor` bernilai Tidak Ada dan `estimasi_kerugian_rupiah` sebesar `0`.
   - Pengujian ulang skenario Anomali pada Tahap 3 - Goreng menghasilkan `estimasi_kerugian_rupiah` sebesar `1544001.61` yang sesuai dengan perhitungan ekonomi produksi.
+
+## Sesi 5: Penyelarasan Basis Data SQLite dan Endpoint Desain UI/UX Stitch
+
+Tanggal: 24 November 2026
+
+Berkas Target: database.py dan main.py
+
+Prompt Utama ke Kiro:
+"Baca file database.py, file main.py, berkas DESIGN.md, dan semua file code.html di dalam folder stitch_rugi_batch_umkm_monitor. Perbarui file main.py agar terhubung ke database.py, simpan setiap hasil analisis ke rugi_batch.db, cocokkan seluruh nama field request dan response JSON dengan layar HTML tersebut, serta tambahkan endpoint GET /api/dashboard-summary dan GET /api/batches. Pertahankan pemuatan model rf_rendemen.joblib dan iso_anomali.joblib serta rumus kerugian yang sudah ada di main.py."
+
+Audit dan Intervensi Manual Manusia:
+
+Memeriksa kode hasil pembaruan Kiro pada main.py untuk memastikan vektor fitur Random Forest (9 kolom) dan Isolation Forest (4 rasio penyusutan) tetap identik dengan skrip pelatihan train_model.py.
+
+Memverifikasi kesesuaian akun demo desain Stitch (sari@bawanghangat.com) dan akun demo kompetisi (demo@rugibatch.id) serta alias nama variabel output JSON agar cocok dengan antarmuka HTML.
+
+Menghapus berkas cadangan sementara main copy.py serta mengeluarkan folder aset HTML stitch_rugi_batch_umkm_monitor dari direktori backend sebelum unggah ke repositori.
